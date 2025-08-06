@@ -1,0 +1,66 @@
+package com.atividade01.app;
+
+import java.util.Scanner;
+
+public class App {
+    public static void main(String[] args) throws Exception {
+        /*!SECTION
+         * Criar um programa que receba o nome, peso e altura de usuário,
+         * e calcule o valor de seu IMC (Índice de Massa Corporal),
+         * cuja fórmula é peso/altura*altura, e informe o seu diagnóstico
+         * baseado na tabela do IMC (pesquisa na internet pela tabela),
+         * O programa poderá calcular o IMC de vários usuários,
+         * e deverá ter a opção de sair do programa.
+         */
+        Scanner leia = new Scanner(System.in);
+
+        String nome;
+        double peso, altura, imc;
+        int opcao;
+
+        do {
+            System.out.println("1 - Calcular IMC.");
+            System.out.println("2 - Sair do programa.");
+            System.out.println("Informe a opção desejada.");
+            opcao = leia.nextInt();
+
+            if (opcao == 1) {
+                leia.nextLine();
+                System.out.println("Informe seu nome:");
+                nome = leia.nextLine();
+                System.out.println("Informe seu peso:");
+                peso = leia.nextDouble();
+                System.out.println("Informe sua altura:");
+                altura = leia.nextDouble();
+                
+                imc = peso / (altura*altura);
+
+                // System.out.println(imc);
+
+                if (imc <= 18.5) {
+                    System.out.println(nome +  " está abaixo do peso.");
+                }
+                else if (imc > 18.5 && imc <= 24.9) {
+                    System.out.println(nome + " está com o peso normal.");
+                }
+                else if (imc >= 25 && imc <= 29.9) {
+                    System.out.println(nome + " está com sobrepeso.");
+                }
+                else if (imc >= 30 && imc <= 34.9) {
+                    System.out.println(nome + " está com obesidade grau I.");
+                }
+                else if (imc >= 35 && imc <= 39.9) {
+                    System.out.println(nome + " está com obesidade grau II.");
+                }
+                else {
+                    System.out.println(nome + " está com obesidade grau III.");
+                }
+            
+            } else if (opcao != 2) {
+                System.out.println("Opção inválida.");
+            }
+        } while (opcao != 2);
+
+        leia.close();
+    }
+}
