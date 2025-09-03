@@ -15,7 +15,7 @@ const msg = () => {
 // Evento
 form.addEventListener('submit', function(event) {
     // Desativa o submit
-    event.defaultPrevented();
+    event.preventDefault();
 
     // Executa a função
     msg();
