@@ -9,7 +9,7 @@ import jakarta.persistence.Id;
 @Entity
 public class Pessoa implements Serializable {
     // Atributos 
-    private static final long serialVersionId = 1L;
+    private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -19,11 +19,7 @@ public class Pessoa implements Serializable {
     private String email;
 
     // Construtor
-    public Pessoa(long idPessoa, String nome, String cpf, String email) {
-        this.idPessoa = idPessoa;
-        this.nome = nome;
-        this.cpf = cpf;
-        this.email = email;
+    public Pessoa() {
     }
 
     // Getters e Setters

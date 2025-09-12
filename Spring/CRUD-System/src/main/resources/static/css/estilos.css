@@ -1,0 +1,22 @@
+.logo-img {
+    width: 48px;
+}
+
+.container {
+    margin-top: 20px;
+    width: 450px;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+.imagem {
+    display: flex;
+    justify-content: center;
+}
+
+.imagem img {
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
