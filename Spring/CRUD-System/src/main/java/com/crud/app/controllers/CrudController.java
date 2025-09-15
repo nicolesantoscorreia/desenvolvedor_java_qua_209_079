@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 import com.crud.app.repository.AppRepository;
 import com.crud.app.models.Pessoa;
 
@@ -26,5 +27,14 @@ public class CrudController {
     public String cadastrar(Pessoa usuario) {
         csr.save(usuario);
         return "redirect:/";
+    }
+
+    // Lista todos os usuários cadastrados
+    @RequestMapping(value = "/listarUsuarios", method = RequestMethod.GET)
+    public ModelAndView listarUsuarios() {
+        ModelAndView mv = new ModelAndView("listar");
+        Iterable<Pessoa> usuarios = csr.findAll();
+        mv.addObject("usuarios", usuarios);
+        return mv;
     }
 }

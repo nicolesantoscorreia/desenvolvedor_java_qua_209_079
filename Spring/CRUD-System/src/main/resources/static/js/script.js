@@ -1,5 +1,6 @@
 const cpfMask = document.querySelector('#cpf');
 
+// Eventos
 cpfMask.addEventListener('input', function() {
     this.value = this.value
         .replace(/\D/g, '')
