@@ -2,25 +2,33 @@
     width: 48px;
 }
 
-.container {
-    margin-top: 20px;
-    width: 450px;
-}
-
 h2 {
     margin-bottom: 20px;
 }
 
+/* Imagens */
 .imagem {
     display: flex;
     justify-content: center;
 }
 
 .imagem img {
+    margin-bottom: 20px;
+    width: 600px;
     border-radius: 10px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
 }
 
+/* Formulário */
+.form {
+    margin-top: 20px;
+    width: 440px;
+    padding: 20px;
+    background-color: whitesmoke;
+    border-radius: 10px;
+}
+
+/* Tabela */
 .listar {
     display: flex;
     flex-direction: column;
