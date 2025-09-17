@@ -56,8 +56,14 @@
             <td th:text="${usuario.nome}"></td>
             <td th:text="${usuario.cpf}"></td>
             <td th:text="${usuario.email}"></td>
-            <td><button type="submit" class="btn btn-warning">Alterar</button></td>
-            <td><button type="submit" class="btn btn-danger">Excluir</button></td>
+            <td>
+              <div>
+                <a class="btn btn-warning" role="button" th:href="@{'/alterarUsuario/' + ${usuario.idPessoa}}">Alterar</a>
+              </div>
+            </td>
+            <td>
+              <button type="submit" class="btn btn-danger">Excluir</button>
+            </td>
           </tr>
         </tbody>
       </table>
