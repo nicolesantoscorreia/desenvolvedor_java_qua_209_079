@@ -22,10 +22,15 @@ h2 {
 /* Formulário */
 .form {
     margin-top: 20px;
-    width: 440px;
+    width: 450px;
     padding: 20px;
     background-color: whitesmoke;
     border-radius: 10px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.form-label {
+    font-weight: 600;
 }
 
 /* Tabela */
@@ -46,4 +51,21 @@ h2 {
 
 .btn-warning:hover {
     color: white;
+}
+
+/* Excluir Usuário */
+.excluir {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: whitesmoke;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.botoes {
+    display: flex;
+    gap: 15px;
 }

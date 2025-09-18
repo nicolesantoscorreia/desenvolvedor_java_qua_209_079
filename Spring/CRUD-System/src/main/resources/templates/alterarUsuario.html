@@ -8,13 +8,13 @@
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <!-- CSS -->
-    <link rel="stylesheet" href="css/estilos.css" type="text/css" media="all">
+    <link rel="stylesheet" href="/css/estilos.css" type="text/css" media="all">
   </head>
   <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary bg-dark" data-bs-theme="dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
-              <img src="img/computer.png" alt="Imagem" class="logo-img">   
+              <img src="/img/computer.png" alt="Imagem" class="logo-img">   
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -39,18 +39,18 @@
         <h2 class="text-center" >Alterar dados do usuário</h2> 
 
         <form method="POST">
-        <div class="input-group mb-3">
-            <span class="input-group-text" id="inputGroup-sizing-default">Nome completo</span>
+        <div class="mb-3">
+            <span class="form-label" id="inputGroup-sizing-default">Nome completo</span>
             <input type="text" name="nome" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" th:value="${usuario.nome}" required>
         </div>
 
-        <div class="input-group mb-3">
-            <span class="input-group-text" id="inputGroup-sizing-default">CPF</span>
+        <div class="mb-3">
+            <span class="form-label" id="inputGroup-sizing-default">CPF</span>
             <input type="text" name="cpf" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" id="cpf" placeholder="000.000.000-00" minlength="14" maxlength="14" th:value="${usuario.cpf}" required>
         </div>
 
-        <div class="input-group mb-3">
-            <span class="input-group-text" id="inputGroup-sizing-default">E-mail</span>
+        <div class="mb-3">
+            <span class="form-label" id="inputGroup-sizing-default">E-mail</span>
             <input type="email" name="email" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="usuario@servidor.com" th:value="${usuario.email}" required>
         </div>
 
