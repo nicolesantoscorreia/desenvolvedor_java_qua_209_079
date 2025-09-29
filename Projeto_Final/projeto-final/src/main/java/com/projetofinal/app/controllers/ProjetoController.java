@@ -2,9 +2,13 @@ package com.projetofinal.app.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.projetofinal.app.models.PessoaDesaparecida;
 import com.projetofinal.app.repository.AppRepository;
 
@@ -41,5 +45,34 @@ public class ProjetoController {
     }
     
     // Alterar
+    @RequestMapping(value = "/alterar/{idPessoaDesaparecida}", method = RequestMethod.GET)
+    public ModelAndView alterar(@PathVariable("idPessoaDesaparecida") long idPessoaDesaparecida) {
+        PessoaDesaparecida pessoa = csr.findByIdPessoaDesaparecida(idPessoaDesaparecida);
+        ModelAndView mv = new ModelAndView("alterar");
+        mv.addObject("pessoa", pessoa);
+        return mv;
+    }
+
+    @RequestMapping(value = "/alterar/{idPessoaDesaparecida}", method = RequestMethod.POST)
+    public String alterar(@Validated PessoaDesaparecida pessoa, BindingResult result, RedirectAttributes attributes) {
+        csr.save(pessoa);
+        return "redirect:/listar";
+    }
+
     // Excluir
+    @RequestMapping("/confirmarExclusao/{idPessoaDesaparecida}")
+    public ModelAndView confirmarExclusao(@PathVariable("idPessoaDesaparecida") long idPessoaDesaparecida) {
+        PessoaDesaparecida pessoa = csr.findByIdPessoaDesaparecida(idPessoaDesaparecida);
+        ModelAndView mv = new ModelAndView("excluir");
+        mv.addObject("pessoa", pessoa);
+        return mv;
+    }
+
+    @RequestMapping("/excluir")
+    public String excluir(long idPessoaDesaparecida) {
+        PessoaDesaparecida pessoa = csr.findByIdPessoaDesaparecida(idPessoaDesaparecida);
+        csr.delete(pessoa);
+        return "redirect:/listar";
+    }
+
 }

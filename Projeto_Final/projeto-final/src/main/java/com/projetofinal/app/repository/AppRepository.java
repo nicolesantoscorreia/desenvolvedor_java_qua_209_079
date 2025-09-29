@@ -4,5 +4,6 @@ import org.springframework.data.repository.CrudRepository;
 import com.projetofinal.app.models.PessoaDesaparecida;
 
 public interface AppRepository extends CrudRepository<PessoaDesaparecida, String> {
-    // TODO
+    PessoaDesaparecida findByIdPessoaDesaparecida(long idPessoaDesaparecida);
+    PessoaDesaparecida deleteByIdPessoaDesaparecida(long idPessoaDesaparecida);
 }

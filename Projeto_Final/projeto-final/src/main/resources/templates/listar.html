@@ -4,7 +4,7 @@
     <meta name="author" content="Nicole Santos">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title></title>
+    <title>Listar</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" th:href="@{css/estilos.css}" type="text/css" media="all">
   </head>
@@ -15,10 +15,55 @@
     <!-- Conteúdo Principal -->
     <main class="mb-5">
       <div class="container">
-        <div th:each="pessoa : ${pessoas}">
-          <span th:text="${pessoa.idPessoaDesaparecida}"></span>
-          <span th:text="${pessoa.nome}"></span>
-          <span th:text="${pessoa.genero}"></span>
+        <h1>Pessoas Cadastradas</h1>
+        <hr>
+        <div class="listar mb-4" th:each="pessoa : ${pessoas}">
+          <div class="row mb-3">
+            <div class="dados">
+              <p>ID:</p>
+              <span th:text="${pessoa.idPessoaDesaparecida}"></span>
+            </div>
+            <div class="dados">
+              <p>Nome:</p>
+              <span th:text="${pessoa.nome}"></span>
+            </div>
+            <div class="col-md-3 dados">
+              <p>Gênero:</p>
+              <span th:text="${pessoa.genero}"></span>
+            </div>
+            <div class="dados">
+              <p>Data de Nascimento:</p>
+              <span th:text="${pessoa.dataNascimento}"></span>
+            </div>
+            <div class="dados">
+              <p>Estado:</p>
+              <span th:text="${pessoa.estado}"></span>
+            </div>
+            <div class="dados">
+              <p>Cidade:</p>
+              <span th:text="${pessoa.cidade}"></span>
+            </div>
+            <div class="dados">
+              <p>Bairro:</p>
+              <span th:text="${pessoa.bairro}"></span>
+            </div>
+          </div>
+          
+          <div class="">
+            <h4>Contato</h4>
+            <div class="dados">
+              <p>Email:</p>
+              <span th:text="${pessoa.email}"></span>
+            </div>
+            <div class="dados">
+              <p>Telefone:</p>
+              <span th:text="${pessoa.telefone}"></span>
+            </div>
+            <div>
+              <a class="btn btn-warning" th:href="@{'/alterar/' + ${pessoa.idPessoaDesaparecida}}">Alterar</a>
+              <a class="btn btn-danger" th:href="@{'/confirmarExclusao/' + ${pessoa.idPessoaDesaparecida}}">Excluir</a>
+          </div>
+          </div>
         </div>
       </div>
     </main>

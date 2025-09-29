@@ -8,6 +8,7 @@ body {
     height: 100vh;
     display: flex;
     flex-direction: column;
+    color: rgb(24, 34, 65);
 }
 
 main {
@@ -15,7 +16,40 @@ main {
 }
 
 .dados-pessoa, .contato {
-    background-color: whitesmoke;
+    background-color: rgb(243, 245, 252);
     padding: 20px;
     border-radius: 10px;
+}
+
+.listar {
+    background-color: rgb(243, 245, 252);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.dados {
+    display: flex;
+    align-items: last baseline;
+    gap: 8px;
+}
+
+.dados p {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.excluir {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background-color: rgb(243, 245, 252);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.button {
+    display: flex;
+    gap: 10px;
 }
