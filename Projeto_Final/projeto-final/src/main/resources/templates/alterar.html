@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="pt-br">
+<html lang="pt-br" xmlns:th="https://thymeleaf.org" xmlns:layout="https://www.ultraq.net.nc/thymeleaf/layout">
   <head>
     <meta name="author" content="Nicole Santos">
     <meta charset="utf-8">
@@ -21,12 +21,12 @@
         <form method="POST">
           <!-- Dados da pessoa -->
           <div class="dados-pessoa mb-4">
-            <h3 class="mb-3">Dados da Pessoa</h3>
+            <h3 class="mb-3">Dados Pessoais</h3>
 
             <div class="row"> 
               <div class="col-md-6 mb-3">
                 <label for="nome" class="form-label">Nome</label>
-                <input type="text" class="form-control" name="nome" th:value="${pessoa.nome}">
+                <input type="text" class="form-control" name="nome" required th:value="${pessoa.nome}">
               </div>
               <div class="col-md-3 mb-3">
                 <label for="genero" class="form-label">Gênero</label>
@@ -40,22 +40,22 @@
               </div>
               <div class="col-md-3 mb-3">
                 <label for="nome" class="form-label">Data de Nascimento</label>
-                <input type="date" class="form-control" name="dataNascimento" th:value="${pessoa.dataNascimento}">
+                <input type="date" class="form-control" name="dataNascimento" required th:value="${pessoa.dataNascimento}">
               </div>
             </div>
 
             <div class="row">
               <div class="col-md-4 mb-3">
                 <label for="nome" class="form-label">Estado</label>
-                <input type="text" class="form-control" name="estado" th:value="${pessoa.estado}">
+                <input type="text" class="form-control" name="estado" required th:value="${pessoa.estado}">
               </div>
               <div class="col-md-4 mb-3">
                 <label for="nome" class="form-label">Cidade</label>
-                <input type="text" class="form-control" name="cidade" th:value="${pessoa.cidade}">
+                <input type="text" class="form-control" name="cidade" required th:value="${pessoa.cidade}">
               </div>
               <div class="col-md-4 mb-3">
                 <label for="nome" class="form-label">Bairro</label>
-                <input type="text" class="form-control" name="bairro" th:value="${pessoa.bairro}">
+                <input type="text" class="form-control" name="bairro" required th:value="${pessoa.bairro}">
               </div>
             </div>
           </div>
@@ -67,11 +67,11 @@
             <div class="row">
               <div class="col-md-6 mb-3">
                 <label for="nome" class="form-label">Email</label>
-                <input type="email" class="form-control" name="email" placeholder="usuario@servidor.com" th:value="${pessoa.email}">
+                <input type="email" class="form-control" name="email" placeholder="usuario@servidor.com" required th:value="${pessoa.email}">
               </div>
               <div class="col-md-6 mb-3">
                 <label for="nome" class="form-label">Telefone</label>
-                <input type="tel" class="form-control" id="telefone" name="telefone" placeholder="(00) 00000-0000" minlength="15" maxlength="15" th:value="${pessoa.telefone}">
+                <input type="tel" class="form-control" id="telefone" name="telefone" placeholder="(00) 00000-0000" minlength="15" maxlength="15" required th:value="${pessoa.telefone}">
               </div>
             </div>
           </div>

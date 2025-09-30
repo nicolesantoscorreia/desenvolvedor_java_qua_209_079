@@ -15,6 +15,11 @@ main {
     flex: 1;
 }
 
+.img {
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
 .dados-pessoa, .contato {
     background-color: rgb(243, 245, 252);
     padding: 20px;
@@ -22,20 +27,32 @@ main {
 }
 
 .listar {
+    margin-right: 20px;
+    width: 640px;
     background-color: rgb(243, 245, 252);
-    padding: 20px;
+    padding: 15px;
+    /* border: 1px solid rgb(24, 34, 65); */
     border-radius: 10px;
+}
+
+.listar-itens {
+    display: flex;
+    gap: 25px;
+}
+
+.listar-button {
+    display: flex;
+    gap: 10px;
 }
 
 .dados {
     display: flex;
     align-items: last baseline;
-    gap: 8px;
+    gap: 10px;
 }
 
 .dados p {
     font-size: 18px;
-    font-weight: 600;
 }
 
 .excluir {
