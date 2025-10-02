@@ -1,16 +1,13 @@
 <!doctype html>
 <html lang="pt-br" xmlns:th="https://thymeleaf.org" xmlns:layout="https://www.ultraq.net.nc/thymeleaf/layout">
-
 <head>
   <meta name="author" content="Nicole Santos">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Listar</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
   <link rel="stylesheet" th:href="@{css/estilos.css}" type="text/css" media="all">
 </head>
-
 <body>
   <!-- Navbar -->
   <header th:replace="fragments/navbar :: navbar"></header>
@@ -20,8 +17,14 @@
     <div class="container">
       <h1>Pessoas Cadastradas</h1>
       <hr>
+      
       <div class="row">
-        <div class="col-md-6 listar mb-4" th:each="pessoa : ${pessoas}">
+        <div class="listar mb-4" th:each="pessoa : ${pessoas}">
+          <figure class="listar-img">
+            <img src="img/user.png" alt="">
+          </figure>
+
+          <!-- Dados pessoais -->
           <h3>Dados Pessoais</h3>
           <hr>
           <div class="listar-itens">
@@ -63,6 +66,7 @@
             <p th:text="${pessoa.bairro}"></p>
           </div>
 
+          <!-- Contato -->
           <h3>Contato</h4>
           <hr>
           <div class="dados">
@@ -92,5 +96,4 @@
     integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
     crossorigin="anonymous"></script>
 </body>
-
 </html>

@@ -15,33 +15,41 @@ main {
     flex: 1;
 }
 
+/* Home */
 .img {
     border-radius: 10px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
 }
 
+/* Cadastrar */
 .dados-pessoa, .contato {
     background-color: rgb(243, 245, 252);
     padding: 20px;
     border-radius: 10px;
 }
 
+/* Listar */
 .listar {
     margin-right: 20px;
     width: 640px;
     background-color: rgb(243, 245, 252);
     padding: 15px;
-    /* border: 1px solid rgb(24, 34, 65); */
     border-radius: 10px;
+}
+
+.listar-img img {
+    width: 100px;
 }
 
 .listar-itens {
     display: flex;
+    flex-wrap: wrap;
     gap: 25px;
 }
 
 .listar-button {
     display: flex;
+    justify-content: flex-end;
     gap: 10px;
 }
 
@@ -55,6 +63,7 @@ main {
     font-size: 18px;
 }
 
+/* Excluir */
 .excluir {
     display: flex;
     flex-direction: column;

@@ -1,5 +1,6 @@
 const telefoneMask = document.querySelector('#telefone');
 
+// Eventos
 telefoneMask.addEventListener('input', function() {
     this.value = this.value
         .replace(/\D/g, '')
